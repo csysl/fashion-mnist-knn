@@ -9,6 +9,7 @@
 
 import tensorflow as tf
 from tensorflow import keras
+
 import numpy as np
 import matplotlib.pyplot as plt
 from func import LossHistory
@@ -32,19 +33,23 @@ model.compile(optimizer=keras.optimizers.Adam(),
               metrics=['accuracy'])
 
 # 创建损失函数绘图实例
-history = LossHistory()
+# history = LossHistory()
 
 # train the model
-time_begin=dt.datetime.now()
-model.fit(train_images, train_labels, epochs=epochs, callbacks=[history])
-time_end=dt.datetime.now()
+checkpointer = keras.callbacks.ModelCheckpoint(filepath='model/model-{epoch:02d}.h5',
+                                               save_best_only=True, verbose=1, period=1)
+time_begin = dt.datetime.now()
+model.fit(train_images, train_labels,
+          validation_data=(test_images, test_labels),
+          epochs=epochs,
+          batch_size=batch_size,
+          callbacks=[keras.callbacks.TensorBoard(log_dir='log'),
+                     checkpointer])
+time_end = dt.datetime.now()
 
-# draw the graph of loss and accuracy in training
-history.loss_plot('epoch', epochs)
+# # draw the graph of loss and accuracy in training
+# history.loss_plot('epoch', epochs)
 
 # print the time of train
-total_time=time_end -time_begin
-print('The time of train:',total_time,'s')
-
-# save the model
-model.save('model/model' + str(epochs) + '.h5')
+total_time = time_end - time_begin
+print('The time of train:', total_time, 's')

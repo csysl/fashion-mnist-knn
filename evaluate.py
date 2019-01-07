@@ -8,12 +8,20 @@
 """
 from tensorflow import keras
 from Init import *
+import numpy as np
 
 # import model
-model = keras.models.load_model('model/model' + str(epochs) + '.h5')
+model = keras.models.load_model('model/model_cnn' + str(epochs) + '.h5')
+
+# show the construction of the model
+# model.summary()
 
 # get loss & acc
+test_images = test_images[..., np.newaxis]
+test_labels = keras.utils.to_categorical(test_labels, 10)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
+# print(model.evaluate(test_images, test_labels))
 
+# print the accuracy of the test dataset
 print('loss:', test_loss)
-print('accuracy:', test_acc)
+print('accuracy:{:5.2f}%'.format(100*test_acc))

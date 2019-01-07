@@ -1,3 +1,4 @@
+最开始将Init.py中的`DataPrepare()`的注释去掉，准备环境
 - windows10
 - tensorflow1.12
 - fashion mnist dataset
