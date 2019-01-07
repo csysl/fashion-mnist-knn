@@ -25,8 +25,7 @@ test_images = test_images[..., np.newaxis]
 # build the model
 model = keras.models.Sequential()
 model.add(keras.layers.Conv2D(filters=64, kernel_size=(11, 11), strides=(1, 1), padding='valid',
-                              activation=tf.keras.activations.relu))
-# activation=tf.keras.activations.relu, input_shape=(28, 28, 1)))
+                              activation=tf.keras.activations.relu, input_shape=(28, 28, 1)))
 model.add(keras.layers.MaxPool2D(pool_size=(2, 2), strides=(2, 2)))
 model.add(keras.layers.Conv2D(filters=192, kernel_size=(5, 5), strides=(1, 1), padding='same',
                               activation=tf.keras.activations.relu))
@@ -69,5 +68,5 @@ time_end = dt.datetime.now()
 total_time = time_end - time_begin
 print('The time of train:', total_time, 's')
 
-# save the model
-model.save('model/model_cnn' + str(epochs) + '.h5')
+# # save the model
+# model.save('model/model_cnn' + str(epochs) + '.h5')
