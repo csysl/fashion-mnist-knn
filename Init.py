@@ -9,7 +9,7 @@
 from func import Data
 import os
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
@@ -21,6 +21,6 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
 train_images, train_labels = Data.GetTrainData()
 test_images, test_labels = Data.GetTestData()
 
-epochs = 20
+epochs = 30
 batch_in_epochs = 250
 batch_size = 40

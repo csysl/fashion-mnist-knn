@@ -46,7 +46,7 @@ model.compile(optimizer=keras.optimizers.Adam(),
               metrics=['accuracy'])
 
 # train the model
-checkpointer = keras.callbacks.ModelCheckpoint(filepath='model2/model_cnn-{epoch:02d}.h5',
+checkpointer = keras.callbacks.ModelCheckpoint(filepath='model3/model_cnn-{epoch:02d}.h5',
                                                save_best_only=True, verbose=1, period=1)
 time_begin = dt.datetime.now()
 model.fit(train_images, train_labels,
@@ -55,7 +55,7 @@ model.fit(train_images, train_labels,
           batch_size=batch_size,
           # initial_epoch=10,
           shuffle=True,  # shuffle the train data before each epoch
-          callbacks=[keras.callbacks.TensorBoard(log_dir='log2'),
+          callbacks=[keras.callbacks.TensorBoard(log_dir='log3'),
                      checkpointer])
 time_end = dt.datetime.now()
 

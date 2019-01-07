@@ -3,4 +3,8 @@
 - tensorflow1.12
 - fashion mnist dataset
 
-每次切片6000张，epoch采用100
+### model
+- model:Alexnet的模型
+- model2:新网络结构的模型，保存
+- model3:新网路结构epochs=30
+
