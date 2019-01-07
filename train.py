@@ -43,7 +43,7 @@ model.fit(train_images, train_labels,
           validation_data=(test_images, test_labels),
           epochs=epochs,
           batch_size=batch_size,
-          callbacks=[keras.callbacks.TensorBoard(log_dir='log'),
+          callbacks=[keras.callbacks.TensorBoard(log_dir='log2'),
                      checkpointer])
 time_end = dt.datetime.now()
 

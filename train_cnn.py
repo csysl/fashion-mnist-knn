@@ -53,12 +53,12 @@ model.compile(optimizer=keras.optimizers.Adam(),
               metrics=['accuracy'])
 
 # train the model
-checkpointer = keras.callbacks.ModelCheckpoint(filepath='model/model_cnn-{epoch:02d}.h5',
+checkpointer = keras.callbacks.ModelCheckpoint(filepath='model2/model_cnn-{epoch:02d}.h5',
                                                save_best_only=True, verbose=1, period=1)
 time_begin = dt.datetime.now()
 model.fit(train_images, train_labels,
           validation_data=(test_images, test_labels),
-          epochs=10,
+          epochs=epochs,
           batch_size=batch_size,
           callbacks=[keras.callbacks.TensorBoard(log_dir='log'),
                      checkpointer])
