@@ -2,4 +2,5 @@
 - windows10
 - tensorflow1.12
 - fashion mnist dataset
-- knn
+
+每次切片6000张，epoch采用100

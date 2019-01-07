@@ -21,5 +21,6 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
 train_images, train_labels = Data.GetTrainData()
 test_images, test_labels = Data.GetTestData()
 
-epochs = 10
-batch_size = 20
+epochs = 20
+batch_in_epochs = 250
+batch_size = 40

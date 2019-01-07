@@ -46,7 +46,6 @@ class Data():
         test_labels = np.load('dataset/test_labels.npy')
         return test_images, test_labels
 
-
 # todo:绘制训练的loss&accuracy
 class LossHistory(keras.callbacks.Callback):
     def on_train_begin(self, logs={}):

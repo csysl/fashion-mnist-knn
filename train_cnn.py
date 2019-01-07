@@ -9,8 +9,6 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-import matplotlib.pyplot as plt
-from func import LossHistory
 from Init import *
 import datetime as dt
 
